@@ -1,3 +1,22 @@
+class Price:
+    
+    def get_charge(self, days_rented: int):
+        
+        def get_charge(self, days_rented: int) -> float:
+            pass
+
+        def get_frequent_renter_points(self, days_rented: int) -> int:
+            pass
+
+class RegulaPrice(Price):
+    pass
+
+class NewReleasePrice(Price):
+    pass
+
+class ChildrenPrice(Price):
+    pass
+
 class Book:
 
     REGULAR: int = 0
@@ -8,7 +27,7 @@ class Book:
         self.title = title
         self.price_code = price_code
         
-    def get_charge(self, days_rented) -> float:
+    def get_charge(self, days_rented: int) -> float:
         amount = 0
         
         # determine amounts for each line
@@ -25,7 +44,7 @@ class Book:
 
         return amount
     
-    def get_frequent_renter_points(self, days_rented):
+    def get_frequent_renter_points(self, days_rented: int):
         # add frequent renter points
         points = 1
         if self.price_code == Book.NEW_RELEASE and days_rented > 1:
